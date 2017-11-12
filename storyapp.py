@@ -14,6 +14,13 @@ def starting_page(top_story1=None):
 def test():
     return render_template('newHome.html')
 
+@app.route('/newHome.html', methods=['GET','POST'])
+def the_app(url=None):
+    if request.method == 'POST':
+        return redirect('results.html')
+    else:
+        return redirect('results.html')
+
 
 if __name__ == '__main__':
     app.run(port=5001)
